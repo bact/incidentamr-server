@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Abstract Meaning Representation</title>
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            padding-top: 3.5em;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #3e3e3e;
+            margin: 0 0 0.75em 0;
+        }
+
+        input,
+        select,
+        textarea {
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            -ms-appearance: none;
+            appearance: none;
+        }
+
+        body,
+        input,
+        textarea,
+        select {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.85em;
+            color: #2d2d2d;
+            font-weight: 300;
+            font-size: 13pt;
+        }
+
+        textarea {
+            border-radius: 8px;
+            border: solid 1px #ddd;
+            width: 100%;
+        }
+
+        form textarea {
+            -moz-transition: background .2s ease-in-out, box-shadow .2s ease-in-out;
+            -webkit-transition: background .2s ease-in-out, box-shadow .2s ease-in-out;
+            -ms-transition: background .2s ease-in-out, box-shadow .2s ease-in-out;
+            transition: background .2s ease-in-out, box-shadow .2s ease-in-out;
+            -webkit-appearance: none;
+            display: block;
+            border: 0;
+            padding: 0.75em;
+            font-size: 1em;
+            border-radius: 8px;
+            border: solid 1px #ddd;
+            background: #fff;
+            color: #212121;
+            box-shadow: inset 0px 2px 3px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025);
+            width: 100%;
+        }
+
+        form textarea:focus {
+            background: #fafafa;
+            box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px #43bff0;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Text:</h2>
+    <p>For example:</p>
+    <ul>
+        <li>Toyota Paralympics self-driving bus hits athlete. [<a
+                href="https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents/toyota-paralympics-self-driving-bus-hits-athlete">AIAAIC</a>]
+        </li>
+        <li>Tesla Model 3 hits parked police car. [<a
+                href="https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents/tesla-model-3-hits-parked-police-car">AIAAIC</a>]
+        </li>
+        <li>Microsoft AI researchers accidentally exposed 38 terabytes of confidential and private information on
+            GitHub, raising questions about the company's security practices. [<a
+                href="https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents/microsoft-ai-researchers-expose-38tb-confidential-data">AIAAIC</a>]
+        </li>
+    </ul>
+    <form method="post">
+        <textarea name="text" rows="3" cols="70"></textarea>
+        <input type="submit" value="Parse" />
+    </form>
+
+    <br />
+    <h2>Abstract Meaning Representation:</h2>
+    <textarea rows="15" cols="70">{{ result }}</textarea>
+</body>
+
+</html>
