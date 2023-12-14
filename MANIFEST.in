@@ -1,3 +1,1 @@
-include incidentamr_server/models/stog/*.json
-include incidentamr_server/models/stog/*.bin
 include incidentamr_server/templates/*.html

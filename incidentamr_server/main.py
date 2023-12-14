@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2023 Arthit Suriyawongkul <arthit@gmail.com>
+# SPDX-License-Identifier: MIT
+
 from typing import List, Union
 
 import amrlib
@@ -14,14 +17,16 @@ class AMRGraphs(BaseModel):
     graphs: List[str] = []
 
 
-stog = amrlib.load_stog_model(model_dir="models/stog")
+stog = amrlib.load_stog_model(
+    model_dir="models/stog"
+)  # stog: sentence to graph
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates/")
 
 
-#@app.get("/")
-#def read_root():
+# @app.get("/")
+# def read_root():
 #    return {"Hello": "World"}
 
 
@@ -37,7 +42,9 @@ async def parse(text: Text):
 @app.get("/")
 def form_post(request: Request):
     result = ""
-    return templates.TemplateResponse("form.html", context={"request": request, "result": result})
+    return templates.TemplateResponse(
+        "form.html", context={"request": request, "result": result}
+    )
 
 
 @app.post("/")
@@ -47,4 +54,6 @@ def form_post(request: Request, text: str = Form(...)):
     for graph in graphs:
         _text = str(graph)
         result = result + _text
-    return templates.TemplateResponse("form.html", context={"request": request, "result": result})
+    return templates.TemplateResponse(
+        "form.html", context={"request": request, "result": result}
+    )
