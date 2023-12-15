@@ -7,15 +7,20 @@ A server to test parsing text to Abstract Meaning Representation.
 
 ## Install
 
-1.  Install required libraries
+1.  Download source
     ```sh
+    git clone https://github.com/bact/incidentamr-server.git
+    ```
+2.  Install required libraries
+    ```sh
+    cd incidentamr-server
     pip install -r requirements.txt
     ```
-2.  Install model
+3.  Install model
     - Download any *Sentence to Graph* model from [amrlib-models/releases](https://github.com/bjascob/amrlib-models/releases).
         - For example,  `model_parse_xfm_bart_large-v0_1_0.tar.gz`.
-    - Extract the tar.gz file, you will get a directory. Rename that directory to `stog`.
-    - Put the `stog` directory inside `incidentamr_server/models` directory.
+    - Extract the tar.gz file, you will get a directory containing .json and .bin files. Rename that directory to `stog`.
+    - Put the `stog` directory inside `incidentamr-server/incidentamr_server/models` directory.
 
 
 ## Run
@@ -26,6 +31,8 @@ From inside `incidentamr_server` directory, run:
 uvicorn main:app --reload
 ```
 
-From within browser, open [http://127.0.0.1:8000](http://127.0.0.1:8000).
+From within a web browser, open [http://127.0.0.1:8000](http://127.0.0.1:8000).
+
+The web interface will look like this:
 
 ![IncidentAMR web interface](incidentamr-webpage.png)
